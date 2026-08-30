@@ -11,7 +11,7 @@ const PROJECTS = [
         description:
             "Web para un profesional de la calistenia: presentación de servicios, clases y contacto directo para convertir visitas en alumnos.",
         tech: ["WordPress", "Astra", "SEO"],
-        url: "https://eduardocarrasco.aunatecla.es",
+        url: "http://educarrasco.aunatecla.es",
     },
     {
         name: "App de Fichaje Laboral",
