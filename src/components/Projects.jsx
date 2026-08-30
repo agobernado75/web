@@ -10,7 +10,6 @@ const PROJECTS = [
         image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1470&q=80",
         description:
             "Web para un profesional de la calistenia: presentación de servicios, clases y contacto directo para convertir visitas en alumnos.",
-        tech: ["WordPress", "Astra", "SEO"],
         url: "http://educarrasco.aunatecla.es",
     },
     {
@@ -20,7 +19,6 @@ const PROJECTS = [
         image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1470&q=80",
         description:
             "Diseño y desarrollo de portfolios profesionales para presentar tu trabajo en entrevistas de trabajo de forma impecable.",
-        tech: ["React", "Diseño Web", "Portfolio"],
         url: "https://antoniogobernado.aunatecla.es",
     },
     {
@@ -30,7 +28,6 @@ const PROJECTS = [
         image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1470&q=80",
         description:
             "Aplicación para que los trabajadores fichen su entrada y salida al trabajo, con historial de jornadas y control sencillo para la empresa.",
-        tech: ["App Móvil", "Control de Jornada", "Tiempo Real"],
         url: "",
     },
 ];
@@ -128,15 +125,6 @@ function Projects() {
                                     </div>
                                     <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.name}</h3>
                                     <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tech.map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="text-xs text-gray-600 bg-white border border-gray-200 px-2 py-1 rounded">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
                                 </div>
                             </CardWrapper>
                         );
