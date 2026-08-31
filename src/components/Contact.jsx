@@ -5,13 +5,13 @@ const INITIAL_FORM = {
     email: "",
     phone: "",
     projectType: "",
-    budget: "",
     message: "",
 };
 
 function Contact() {
     const [formData, setFormData] = useState(INITIAL_FORM);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,11 +21,31 @@ function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Submitted", formData);
-        setIsSubmitted(true);
-        setFormData(INITIAL_FORM);
+        setError("");
+        const payload = new URLSearchParams({
+            "form-name": "contact",
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            projectType: formData.projectType,
+            message: formData.message,
+        });
+        try {
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: payload.toString(),
+            });
+            if (!response.ok) {
+                throw new Error("No se pudo enviar el mensaje");
+            }
+            setIsSubmitted(true);
+            setFormData(INITIAL_FORM);
+        } catch (err) {
+            setError("Hubo un problema al enviar el mensaje. Inténtalo de nuevo.");
+        }
     };
 
     useEffect(() => {
@@ -73,18 +93,16 @@ function Contact() {
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
                                                 strokeWidth={2}
-                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                             />
                                         </svg>
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                                        <p className="mt-1 text-gray-600">Respuesta en menos de 24 horas</p>
-                                        <a
-                                            href="mailto:hola@goberstudio.dev"
-                                            className="mt-2 inline-block text-indigo-600 font-medium hover:text-indigo-700 transition-colors">
-                                            hola@goberstudio.dev
-                                        </a>
+                                        <h3 className="text-lg font-medium text-gray-900">Ubicación</h3>
+                                        <p className="mt-1 text-gray-600">
+                                            Valladolid (España). Soy de Valladolid y puedo trabajar con clientes
+                                            en toda España.
+                                        </p>
                                     </div>
                                 </div>
 
@@ -108,8 +126,58 @@ function Contact() {
                                     <div className="ml-4">
                                         <h3 className="text-lg font-medium text-gray-900">Disponibilidad</h3>
                                         <p className="mt-1 text-gray-600">
-                                            Abierto a nuevos proyectos web y móviles. Trato directo conmigo,
-                                            sin intermediarios.
+                                            Abierto a nuevos proyectos de webs y aplicaciones digitales. Trato
+                                            directo, sin intermediarios.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start">
+                                    <div className="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-6 w-6 text-indigo-600"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-lg font-medium text-gray-900">Entrega Rápida</h3>
+                                        <p className="mt-1 text-gray-600">
+                                            Tu proyecto listo en 1–2 semanas, sin sacrificar calidad.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start">
+                                    <div className="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-6 w-6 text-indigo-600"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-lg font-medium text-gray-900">Respuesta Ágil</h3>
+                                        <p className="mt-1 text-gray-600">
+                                            Te respondo en menos de 24 horas con una propuesta clara y cerrada.
                                         </p>
                                     </div>
                                 </div>
@@ -143,7 +211,25 @@ function Contact() {
                                     </div>
                                 </div>
                             ) : (
-                                <form className="space-y-6" onSubmit={handleSubmit}>
+                                <>
+                                    {error && (
+                                        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+                                            {error}
+                                        </div>
+                                    )}
+                                    <form
+                                    className="space-y-6"
+                                    name="contact"
+                                    method="POST"
+                                    data-netlify="true"
+                                    data-netlify-honeypot="bot-field"
+                                    onSubmit={handleSubmit}>
+                                    <input type="hidden" name="form-name" value="contact" />
+                                    <p className="hidden">
+                                        <label>
+                                            No rellenes este campo: <input name="bot-field" />
+                                        </label>
+                                    </p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label
@@ -216,36 +302,11 @@ function Contact() {
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                                             >
                                                 <option value="">Selecciona un tipo</option>
-                                                <option value="landing">Landing Page</option>
-                                                <option value="corporativa">Web Corporativa</option>
-                                                <option value="ecommerce">E-commerce</option>
-                                                <option value="app">App Móvil</option>
+                                                <option value="web-pymes">Web para Pymes (250 €)</option>
+                                                <option value="app-digital">Aplicación Digital a medida (350 €)</option>
                                                 <option value="otro">Otro</option>
                                             </select>
                                         </div>
-                                    </div>
-
-                                    <div>
-                                        <label
-                                            htmlFor="budget"
-                                            className="block text-sm font-medium text-gray-700 mb-1"
-                                        >
-                                            Presupuesto Estimado
-                                        </label>
-                                        <select
-                                            id="budget"
-                                            name="budget"
-                                            value={formData.budget}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-                                        >
-                                            <option value="">Selecciona un rango</option>
-                                            <option value="<1000">Menos de 1.000 €</option>
-                                            <option value="1000-3000">1.000 € - 3.000 €</option>
-                                            <option value="3000-10000">3.000 € - 10.000 €</option>
-                                            <option value=">10000">Más de 10.000 €</option>
-                                        </select>
                                     </div>
 
                                     <div>
@@ -274,6 +335,7 @@ function Contact() {
                                         </button>
                                     </div>
                                 </form>
+                                </>
                             )}
                         </div>
                     </div>

@@ -1,8 +1,6 @@
 const SERVICE_LINKS = [
-    { name: "Landing Pages", href: "#pricing" },
-    { name: "Webs Corporativas", href: "#pricing" },
-    { name: "E-commerce", href: "#pricing" },
-    { name: "Apps Móviles", href: "#pricing" },
+    { name: "Webs para Pymes", href: "#pricing" },
+    { name: "Aplicaciones Digitales", href: "#pricing" },
 ];
 
 const COMPANY_LINKS = [
@@ -19,12 +17,25 @@ function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
-                        <h2 className="text-2xl font-bold text-white mb-2">
-                            GOBER<span className="text-indigo-500">STUDIO</span>
-                        </h2>
+                        <div className="flex flex-col items-start mb-2">
+                            <svg
+                                className="w-12 h-5 mb-1 text-indigo-500"
+                                fill="none"
+                                viewBox="0 0 64 20"
+                                stroke="currentColor"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <path d="M4 18V10a28 28 0 0056 0v8" />
+                                <path d="M14 18l2-7 6 5 6-7 6 7 6-5 2 7" />
+                            </svg>
+                            <h2 className="text-2xl font-bold text-white leading-none">
+                                GOBER<span className="text-indigo-500">AUTOMATE</span>
+                            </h2>
+                        </div>
                         <p className="text-gray-400 mb-6">
-                            Antonio Gobernado: diseño y desarrollo páginas web y apps a medida. Tu
-                            proyecto, de la idea al lanzamiento, con trato directo.
+                            Antonio Gobernado: diseño y desarrollo webs para pymes y aplicaciones digitales
+                            a medida. Tu proyecto, de la idea al lanzamiento, con trato directo.
                         </p>
                     </div>
 
@@ -57,20 +68,13 @@ function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Contacto</h3>
                         <ul className="space-y-2 text-gray-400">
-                            <li>
-                                <a
-                                    href="mailto:hola@goberstudio.dev"
-                                    className="hover:text-white transition duration-300">
-                                    hola@goberstudio.dev
-                                </a>
-                            </li>
                             <li>Respuesta en menos de 24 horas</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="py-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-                    © 2026 GoberStudio · Antonio Gobernado. Todos los derechos reservados.
+                    © 2026 GoberAutomate · Antonio Gobernado. Todos los derechos reservados.
                 </div>
             </div>
         </footer>

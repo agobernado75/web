@@ -34,11 +34,21 @@ function Navbar({ activeSection }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20">
                     <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                            <span className={`text-2xl font-extrabold ${scrolled ? "text-gray-900" : "text-white"}`}>
-                                GOBER<span className="text-indigo-500">STUDIO</span>
+                        <div className="flex-shrink-0 flex flex-col items-center">
+                            <svg
+                                className={`w-12 h-5 mb-1 ${scrolled ? "text-indigo-600" : "text-indigo-400"}`}
+                                fill="none"
+                                viewBox="0 0 64 20"
+                                stroke="currentColor"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <path d="M4 18V10a28 28 0 0056 0v8" />
+                                <path d="M14 18l2-7 6 5 6-7 6 7 6-5 2 7" />
+                            </svg>
+                            <span className={`text-2xl font-extrabold leading-none ${scrolled ? "text-gray-900" : "text-white"}`}>
+                                GOBER<span className="text-indigo-500">AUTOMATE</span>
                             </span>
-                            <div className={`ml-2 inline-block w-2 h-2 rounded-full animate-pulse ${scrolled ? "bg-indigo-600" : "bg-indigo-400"}`}></div>
                         </div>
                     </div>
 

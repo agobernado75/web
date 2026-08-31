@@ -184,7 +184,7 @@ function Features() {
                                         />
                                         <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                                             <h3 className="text-3xl font-bold text-white mb-3">
-                                                Descubre Qué Hace Diferente a GoberStudio
+                                                Descubre Qué Hace Diferente a GoberAutomate
                                             </h3>
                                             <p className="text-gray-200 text-lg max-w-2xl">
                                                 Pasa el cursor sobre cada ventaja para conocer cómo

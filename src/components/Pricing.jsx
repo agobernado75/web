@@ -1,50 +1,33 @@
 const PLANS = [
     {
-        name: "Landing Page",
-        price: "€499",
+        name: "Webs para Pymes",
+        price: "€250",
         period: "pago único",
         features: [
-            "Diseño responsive a medida",
+            "Diseño a medida y responsive",
             "Optimización SEO básica",
             "Formulario de contacto",
             "Entrega en 1–2 semanas",
             "1 ronda de revisiones",
         ],
-        popular: false,
-        btnText: "Elegir Plan",
-        btnClass: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white",
-    },
-    {
-        name: "Web Corporativa",
-        price: "€1.200",
-        period: "pago único",
-        features: [
-            "Hasta 6 páginas profesionales",
-            "CMS para autogestionar contenidos",
-            "Blog e integración con redes sociales",
-            "SEO técnico y analítica configurada",
-            "Hosting y dominio 1 año incluidos",
-            "Soporte gratuito 3 meses",
-        ],
         popular: true,
         btnText: "Elegir Plan",
-        btnClass: "bg-indigo-600 text-white hover:bg-indigo-700",
+        btnClass: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white",
     },
     {
-        name: "Web + App a Medida",
-        price: "€4.900+",
-        period: "según proyecto",
+        name: "Aplicaciones Digitales",
+        price: "€350",
+        period: "a medida",
         features: [
-            "Aplicación web y móvil (iOS/Android)",
+            "Aplicación digital a medida",
             "Diseño UX/UI personalizado",
+            "Integraciones con APIs",
             "Panel de administración",
-            "Integraciones con APIs y pagos",
-            "Mantenimiento y evolutivos",
-            "Soporte prioritario 24/7",
+            "Soporte inicial tras el lanzamiento",
         ],
         popular: false,
-        btnText: "Pedir Propuesta",
-        btnClass: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white",
+        btnText: "Elegir Plan",
+        btnClass: "bg-indigo-600 text-white hover:bg-indigo-700",
     },
 ];
 
@@ -69,7 +52,7 @@ function Pricing() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {PLANS.map((plan) => (
                         <div
                             key={plan.name}

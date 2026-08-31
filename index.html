@@ -2,17 +2,20 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="GoberStudio — Antonio Gobernado, desarrollador web y móvil. Diseño y desarrollo páginas web y apps a medida para hacer crecer tu negocio."
+      content="GoberAutomate — Antonio Gobernado, desarrollador web y móvil. Diseño y desarrollo webs para pymes y aplicaciones digitales a medida para hacer crecer tu negocio."
     />
     <link href="/src/index.css" rel="stylesheet" />
-    <title>GoberStudio — Diseño de Webs y Apps a Medida</title>
+    <title>GoberAutomate — Diseño de Webs y Aplicaciones Digitales a Medida</title>
   </head>
   <body>
     <div id="root"></div>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="tel" name="phone" /><input type="text" name="projectType" /><textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

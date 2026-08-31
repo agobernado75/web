@@ -24,7 +24,7 @@ function About() {
             <p className="text-lg text-gray-600 mb-6">
               Soy desarrollador web y móvil y creo que las pequeñas y medianas empresas merecen
               productos digitales del mismo nivel que las grandes corporaciones. Por eso creé
-              GoberStudio: mi proyecto personal donde diseño, programo y lanzo webs y apps de
+              GoberAutomate: mi proyecto personal donde diseño, programo y lanzo webs y apps de
               principio a fin.
             </p>
             <p className="text-lg text-gray-600 mb-6">
