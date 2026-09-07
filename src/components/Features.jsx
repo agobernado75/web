@@ -179,7 +179,7 @@ function Features() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
                                         <img
                                             src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1740&q=80"
-                                            alt="Antonio Gobernado planificando un proyecto"
+                                            alt="Antonio planificando un proyecto"
                                             className="w-full h-full object-cover"
                                         />
                                         <div className="absolute bottom-0 left-0 right-0 p-8 z-20">

@@ -34,7 +34,7 @@ function Footer() {
                             </h2>
                         </div>
                         <p className="text-gray-400 mb-6">
-                            Antonio Gobernado: diseño y desarrollo webs para pymes y aplicaciones digitales
+                            Antonio: diseño y desarrollo webs para pymes y aplicaciones digitales
                             a medida. Tu proyecto, de la idea al lanzamiento, con trato directo.
                         </p>
                     </div>
@@ -74,7 +74,7 @@ function Footer() {
                 </div>
 
                 <div className="py-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-                    © 2026 GoberAutomate · Antonio Gobernado. Todos los derechos reservados.
+                    © 2026 GoberAutomate. Todos los derechos reservados.
                 </div>
             </div>
         </footer>

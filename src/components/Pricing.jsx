@@ -16,16 +16,29 @@ const PLANS = [
     },
     {
         name: "Aplicaciones Digitales",
-        price: "€350",
+        price: "A consultar",
         period: "a medida",
         features: [
             "Aplicación digital a medida",
             "Diseño UX/UI personalizado",
-            "Integraciones con APIs",
-            "Panel de administración",
-            "Soporte inicial tras el lanzamiento",
+            "Primera visita y diagnóstico gratuitos",
+            "Si apruebas el presupuesto, se inicia con una primera partida de 350 €",
         ],
         popular: false,
+        btnText: "Elegir Plan",
+        btnClass: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white",
+    },
+    {
+        name: "Fichaje Laboral 2026",
+        price: "€1.000",
+        period: "todo el paquete",
+        features: [
+            "Registro diario de jornada (entrada, pausas y salida)",
+            "Historial accesible para el trabajador conservado 4 años",
+            "Registro automático de horas extraordinarias",
+            "Identificación fiable de cada fichaje del trabajador",
+        ],
+        star: true,
         btnText: "Elegir Plan",
         btnClass: "bg-indigo-600 text-white hover:bg-indigo-700",
     },
@@ -52,23 +65,31 @@ function Pricing() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {PLANS.map((plan) => (
                         <div
                             key={plan.name}
-                            className={`bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 ${
-                                plan.popular ? "border-2 border-indigo-600 relative" : ""
+                            className={`flex flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border-2 ${
+                                plan.popular || plan.star ? "border-indigo-600 relative" : "border-gray-200"
                             }`}>
                             {plan.popular && (
                                 <div className="absolute top-0 right-0 bg-indigo-600 text-white py-1 px-4 rounded-bl-lg font-medium">
                                     Más Popular
                                 </div>
                             )}
+                            {plan.star && (
+                                <div className="absolute top-0 right-0 bg-amber-400 text-amber-900 py-1 px-4 rounded-bl-lg font-medium flex items-center gap-1">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.587-1.81H7.03a1 1 0 00.95-.69l1.07-3.292z" />
+                                    </svg>
+                                    Plan Estrella
+                                </div>
+                            )}
 
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.name}</h3>
+                            <div className="p-8 flex-1">
+                                <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-800">{plan.name}</h3>
                                 <div className="flex items-end mb-6">
-                                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                                    <span className={`font-bold text-gray-900 ${plan.price.length <= 6 ? "text-4xl" : "text-2xl"}`}>{plan.price}</span>
                                     <span className="text-gray-600 ml-2">{plan.period}</span>
                                 </div>
 

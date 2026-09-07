@@ -64,7 +64,7 @@ function Hero() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl">
-                  Soy <span className="text-indigo-400 font-semibold">Antonio Gobernado</span>, y diseño y
+                  Soy <span className="text-indigo-400 font-semibold">Antonio</span>, y diseño y
                   desarrollo páginas web y aplicaciones a medida. Diseño premium, código limpio y
                   resultados medibles para tu empresa.
                 </p>

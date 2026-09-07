@@ -19,7 +19,7 @@ function About() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Hola, Soy <span className="text-indigo-600">Antonio Gobernado</span>
+              Hola, Soy <span className="text-indigo-600">Antonio</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6">
               Soy desarrollador web y móvil y creo que las pequeñas y medianas empresas merecen
@@ -61,7 +61,7 @@ function About() {
             <div className="relative">
               <img
                 src={antonio}
-                alt="Antonio Gobernado, desarrollador web y móvil"
+                alt="Antonio, desarrollador web y móvil"
                 className="w-full rounded-lg shadow-xl h-[500px] object-cover"
               />
             </div>

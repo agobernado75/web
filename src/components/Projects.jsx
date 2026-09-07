@@ -19,7 +19,7 @@ const PROJECTS = [
         image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1470&q=80",
         description:
             "Diseño y desarrollo de portfolios profesionales para presentar tu trabajo en entrevistas de trabajo de forma impecable.",
-        url: "https://antoniogobernado.aunatecla.es",
+        url: "https://curriculo-agobernado75.netlify.app",
     },
     {
         name: "App de Fichaje Laboral",
