@@ -107,6 +107,14 @@ function Projects() {
                                         <span className={`text-xs font-semibold px-3 py-1 rounded-full ${STATUS_LABELS[project.status].class}`}>
                                             {STATUS_LABELS[project.status].text}
                                         </span>
+                                        {project.name === "App de Fichaje Laboral" && (
+                                            <a
+                                                href="#contact"
+                                                className="text-xs font-bold text-white bg-red-600 px-3 py-1 rounded-full hover:bg-red-700 transition-colors"
+                                                style={{ animation: "blink 1.2s ease-in-out infinite" }}>
+                                                SOLICITA DEMO
+                                            </a>
+                                        )}
                                         {project.url && (
                                             <svg
                                                 className="w-4 h-4 text-gray-400 ml-auto group-hover:text-indigo-600 transition-colors"

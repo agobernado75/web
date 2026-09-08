@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import eduardoImg from '../assets/yo1.png';
 
 const TESTIMONIALS = [
     {
         quote: "Antonio diseñó y lanzó mi web de calistenia de principio a fin. Trato directo, entregas rápidas y una página que convierte visitas en alumnos.",
         author: "Eduardo C.",
         role: "Entrenador Personal",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=687&q=80",
+        image: eduardoImg,
         rating: 5,
         achievement: "Web publicada",
     },

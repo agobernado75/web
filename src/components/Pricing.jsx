@@ -39,8 +39,9 @@ const PLANS = [
             "Identificación fiable de cada fichaje del trabajador",
         ],
         star: true,
-        btnText: "Elegir Plan",
-        btnClass: "bg-indigo-600 text-white hover:bg-indigo-700",
+        btnText: "SOLICITA DEMO",
+        btnClass: "bg-red-600 text-white hover:bg-red-700",
+        blink: true,
     },
 ];
 
@@ -115,7 +116,8 @@ function Pricing() {
 
                             <a
                                 href="#contact"
-                                className={`w-full block text-center px-6 py-3 rounded-md font-medium transition duration-300 ${plan.btnClass}`}>
+                                className={`w-full block text-center px-6 py-3 rounded-md font-medium transition duration-300 ${plan.btnClass}`}
+                                style={plan.blink ? { animation: "blink 1.2s ease-in-out infinite" } : undefined}>
                                 {plan.btnText}
                             </a>
                         </div>
