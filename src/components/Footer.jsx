@@ -66,6 +66,22 @@ function Footer() {
                     </div>
 
                     <div>
+                        <h3 className="text-lg font-semibold mb-4">Legal</h3>
+                        <ul className="space-y-2">
+                            <li>
+                                <a href="/cookies.html" className="text-gray-400 hover:text-white transition duration-300">
+                                    Política de Cookies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/privacidad.html" className="text-gray-400 hover:text-white transition duration-300">
+                                    Política de Privacidad
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <h3 className="text-lg font-semibold mb-4">Contacto</h3>
                         <ul className="space-y-2 text-gray-400">
                             <li>Respuesta en menos de 24 horas</li>

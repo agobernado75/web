@@ -9,6 +9,7 @@ import Process from './components/Process'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import CookieConsent from './components/CookieConsent'
 import ScrollToTop from './components/ScrollToTop'
 
 const SECTIONS = [
@@ -59,6 +60,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <CookieConsent />
       <ScrollToTop />
     </div>
   )
